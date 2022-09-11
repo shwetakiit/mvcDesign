@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+   <%@page isELIgnored=false %> 
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,11 +15,11 @@
   </head>
   <body>
   <div class="container mt-5">
-  <h3 class="text-center">Registration Form</h3>
+  <h3 class="text-center">${header}</h3>
   <form action="processForm" method="post">
     <div class="form-group" >
     <label for="exampleInputEmail1">Email address</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="emailId">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="emailId">
     </div>
   
     <div class="form-group" >
@@ -28,7 +29,7 @@
   
     <div class="form-group" >
     <label for="exampleInputEmail1">User password</label>
-    <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="userPaswword" placeholder="Enter Password">
+    <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="userPaswword" placeholder="Enter Password" name="password">
    </div>
   <div class="container text-center">
   <button type="submit" class="btn btn-success">Sign Up</button>
