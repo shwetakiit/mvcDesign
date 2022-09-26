@@ -32,7 +32,9 @@ public class EmployeeFormController {
 	
 	@RequestMapping(path="registration/registrationProcess", method = RequestMethod.POST)
 	public String SubmitRegistrationForm(@ModelAttribute EmployeeDTO employeeDTO,Model model) {
-		this.employeeService.addNewEmployee(employeeDTO);
+	Integer id = this.employeeService.addNewEmployee(employeeDTO);
+	model.addAttribute("msg", "User created successfully with id "+id);
+		
 		System.out.println(employeeDTO);
       return "employeeportal";		
 		
