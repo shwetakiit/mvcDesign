@@ -3,12 +3,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx
-        http://www.springframework.org/schema/tx/spring-tx.xsd">
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd" 
+        >
 
 	<!-- Scan controller class package ,enable annotation based controller -->
 
@@ -17,7 +21,10 @@
 	<!-- Scan all classes services,dao,controller under package kumari.shweta -->
 	<context:component-scan
 		base-package="/kumari.shweta"></context:component-scan>
-
+	<!--Use static file by spring MVC -->
+	<mvc:annotation-driven />
+	<mvc:resources location="/WEB-INF/resources/"
+		mapping="/resources/**" />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		name="viewResolver">
